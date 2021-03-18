@@ -1,0 +1,185 @@
+
+:root{
+    /* Light Theme */
+--Very-LightGray: hsl(0, 0%, 98%);
+--Very-LightGrayishBlue: hsl(236, 33%, 92%);
+--Light-GrayishBlue: hsl(233, 11%, 84%);
+--Dark-GrayishBlue: hsl(236, 9%, 61%);
+--Very-DarkGrayishBlue: hsl(235, 19%, 35%);
+--white: #fff;
+--blck: #000;
+
+
+--BrightBlue: hsl(220, 98%, 61%);
+--CheckBackground: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+
+
+}
+
+
+a, li, ul{
+    text-decoration: none;
+    list-style-type: none;
+    color: var(--text-white);
+    cursor: pointer;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-size: 1rem;
+    font-family: 'Josefin Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../images/bg-desktop-light.jpg') no-repeat;
+    background-size: contain;
+    background-position: top;
+    
+}
+
+
+.container{
+    width: 660px;
+    margin: 5rem auto;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+.title h1{
+    color: var(--Very-LightGray);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.title .moon{
+    width: 6%;
+}
+section{
+    margin-top: 2rem;
+}
+section label{
+    position: relative;
+} .checkbox{
+    position: absolute;
+    border-radius: 50%;
+    border: 0.5px solid var(--Dark-GrayishBlue);
+    width: 1.7rem;
+    height: 1.7rem;
+    z-index: 2;
+    top: -10px;
+    left: 13px;
+    cursor: pointer;
+}
+.checkbox.active{
+    background-image: var(--CheckBackground);
+}
+section label .search-input{
+    width: 100%;
+    background-color:var(--Very-LightGray);
+    border: none;
+    position: relative;
+    height: 3.2rem;
+    border-radius: 3px;
+}
+select label .search-input::after{
+    content: '|';
+background-color: var(--BrightBlue);
+width: 0.1rem;
+height: 100%;
+position: absolute;
+top: 0;
+left: 50%;
+}
+.search-input[placeholder]{
+    padding-left: 3.6rem;
+    position: relative;
+}
+
+.tasks{
+    height: 100%;
+    width: 100%;
+    margin-top: 1.8rem;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+    background-color: var(--white);
+}
+
+.tasks .row{
+ display: flex;
+ justify-content: start;
+ padding: 1.2rem 1rem;
+  border-bottom: 1px solid var(--Very-DarkGrayishBlue);
+}
+
+
+.tasks .row .check-task{
+    border-radius: 50%;
+    border: 0.5px solid var(--Dark-GrayishBlue);
+    width: 1.7rem;
+    height: 1.7rem;
+    z-index: 2;
+    top: 0px;
+    left: 13px;
+    cursor: pointer;
+    position: relative;
+}
+.tasks .row .check-task.active{
+    background-image: var(--CheckBackground);
+    position: relative;
+}
+
+.tasks .row .check-task.active::after{
+    content: '\2714';
+    color: var(--Very-LightGrayishBlue);
+    position: absolute;
+    top: 7px;
+    left: 5.5px;
+}
+.tasks .row .input-value{
+    padding-left: 1.5rem;
+    padding-top: 0.4rem;
+}
+
+.tasks .footer{
+display: flex;
+justify-content: space-between;
+padding: 1.2rem 1rem;
+}
+
+.tasks .footer .cuonter-tasks{
+    color: var(--Dark-GrayishBlue);
+}
+.tasks .footer .commands{
+    color: var(--Dark-GrayishBlue);
+    padding: 0 0.8rem;
+}
+.footer .commands a{
+    padding-left: 0.4rem;
+}
+.tasks .footer .commands a:hover{
+    color: var(--Very-DarkGrayishBlue);
+}
+.footer .commands a:focus{
+    color: var(--BrightBlue);
+    outline: none;
+}
+
+.footer .clear-tasks .clear,
+.footer .clear-tasks .completed{
+    cursor: pointer;
+    color: var(--Dark-GrayishBlue);
+}
+
+
+.footer .clear-tasks .clear:hover,
+.footer .clear-tasks .completed:hover{
+    color: var(--Very-DarkGrayishBlue);
+}
+
+.footer .clear-tasks .clear.active,
+.footer .clear-tasks .completed.active{
+    color: var(--Very-DarkGrayishBlue);
+}
